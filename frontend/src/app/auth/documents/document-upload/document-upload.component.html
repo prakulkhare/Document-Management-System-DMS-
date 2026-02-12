@@ -1,0 +1,17 @@
+<div class="page">
+    <h1>Upload Document</h1>
+  
+    <form (ngSubmit)="onSubmit()" class="card">
+      <label>File</label>
+      <input type="file" (change)="onFileChange($event)" required />
+  
+      <label>Tags (comma separated)</label>
+      <input type="text" [(ngModel)]="tags" name="tags" />
+  
+      <button type="submit" [disabled]="uploading">
+        {{ uploading ? 'Uploading...' : 'Upload' }}
+      </button>
+  
+      <p *ngIf="error" class="error">{{ error }}</p>
+    </form>
+  </div>

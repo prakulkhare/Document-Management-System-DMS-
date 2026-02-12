@@ -1,0 +1,40 @@
+<div class="page">
+  <ng-container *ngIf="loading">
+    <p>Loading...</p>
+  </ng-container>
+
+  <ng-container *ngIf="!loading && error">
+    <p class="error">{{ error }}</p>
+  </ng-container>
+
+  <ng-container *ngIf="!loading && !error && doc">
+    <h1>{{ doc.fileName }}</h1>
+    <p><strong>Tags:</strong> {{ doc.tags?.join(', ') || '-' }}</p>
+    <p><strong>Current version:</strong> {{ doc.version }}</p>
+
+    <button type="button" (click)="downloadLatest()">Download latest</button>
+
+    <h2>Versions</h2>
+    <ul>
+      <li *ngFor="let v of doc.versions">
+        Version {{ v.versionNumber }} ({{ v.uploadedAt | date: 'short' }})
+        -
+        <button type="button" (click)="downloadVersion(v.versionNumber)">
+          Download
+        </button>
+      </li>
+    </ul>
+
+    <section *ngIf="isOwnerOrAdmin()" class="share-section">
+      <h2>Share</h2>
+      <label>Email</label>
+      <input type="email" [(ngModel)]="shareEmail" />
+      <label>Access</label>
+      <select [(ngModel)]="shareAccess">
+        <option value="view">View</option>
+        <option value="edit">Edit</option>
+      </select>
+      <button (click)="share()">Share</button>
+    </section>
+  </ng-container>
+</div>

@@ -1,0 +1,18 @@
+<div class="app-shell">
+  <header class="app-header">
+    <div class="logo">DMS</div>
+    <nav *ngIf="auth.isAuthenticated()" class="nav-links">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        Documents
+      </a>
+      <a routerLink="/documents/upload" routerLinkActive="active">
+        Upload
+      </a>
+      <button type="button" (click)="onLogout()">Logout</button>
+    </nav>
+  </header>
+
+  <main class="app-main">
+    <router-outlet></router-outlet>
+  </main>
+</div>

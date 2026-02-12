@@ -1,0 +1,244 @@
+.page {
+  padding: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 2rem;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #374151;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin: 0.75rem 0;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+button {
+  padding: 0.6rem 1.2rem;
+  background: #2563eb;
+  color: #fff;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+
+  &:hover:not(:disabled) {
+    background: #1d4ed8;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin: 0.75rem 0;
+  padding: 0.75rem;
+  background: #f9fafb;
+  border-radius: 6px;
+  border-left: 3px solid #2563eb;
+  transition: all 0.15s ease;
+
+  &:hover {
+    background: #f3f4f6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  button,
+  a {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+.share-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border: 2px solid #e5e7eb;
+
+  h2 {
+    margin-top: 0;
+    color: #111827;
+  }
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+input[type='text'],
+select {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.15s ease;
+
+  &:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  }
+}
+
+.error {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  color: #b91c1c;
+  background: #fee;
+  border-left: 4px solid #b91c1c;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.status {
+  padding: 2rem;
+  text-align: center;
+  color: #6b7280;
+  background: white;
+  border-radius: 8px;
+  margin: 2rem 0;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.error {
+    color: #991b1b;
+    background: #fef2f2;
+    border-left: 4px solid #b91c1c;
+  }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+  .page {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+    margin-right: 0.25rem;
+    font-size: 0.95rem;
+  }
+
+  li {
+    padding: 0.6rem;
+  }
+
+  .share-section {
+    padding: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  label {
+    margin-top: 0.75rem;
+  }
+
+  input,
+  select {
+    padding: 0.65rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 0.75rem;
+  }
+
+  h1 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 0.6rem;
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  ul {
+    padding-left: 1rem;
+  }
+
+  li {
+    padding: 0.5rem;
+    font-size: 0.95rem;
+    border-left-width: 2px;
+
+    button,
+    a {
+      font-size: 0.85rem;
+      padding: 0.35rem 0.6rem;
+    }
+  }
+
+  .share-section {
+    padding: 0.75rem;
+  }
+
+  input,
+  select {
+    padding: 0.65rem;
+    font-size: 16px; 
+  }
+}
+

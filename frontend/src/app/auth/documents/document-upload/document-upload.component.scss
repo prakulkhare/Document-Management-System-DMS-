@@ -1,0 +1,167 @@
+.page {
+  padding: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+
+  h1 {
+    margin-top: 0;
+    font-size: 2rem;
+    color: #1f2937;
+  }
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-top: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+input[type='text'],
+input[type='file'] {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.15s ease;
+
+  &:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  }
+}
+
+input[type='file'] {
+  padding: 0.75rem;
+  cursor: pointer;
+
+  &::file-selector-button {
+    padding: 0.5rem 1rem;
+    background: #e5e7eb;
+    color: #374151;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-right: 1rem;
+    transition: all 0.15s ease;
+
+    &:hover {
+      background: #d1d5db;
+    }
+  }
+}
+
+button {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  background: #2563eb;
+  color: #fff;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+
+  &:hover:not(:disabled) {
+    background: #1d4ed8;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.error {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  color: #b91c1c;
+  background: #fee;
+  border-left: 4px solid #b91c1c;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+
+
+@media (max-width: 768px) {
+  .page {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  label {
+    margin-top: 1rem;
+  }
+
+  input[type='file']::file-selector-button {
+    margin-right: 0.5rem;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 0.75rem;
+  }
+
+  .card {
+    padding: 1rem;
+    border-radius: 6px;
+  }
+
+  h1 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  label {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  input[type='text'],
+  input[type='file'] {
+    padding: 0.65rem;
+    font-size: 16px; 
+  }
+
+  button {
+    padding: 0.65rem;
+    margin-top: 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  input[type='file']::file-selector-button {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.8rem;
+    margin-right: 0.25rem;
+  }
+}
+

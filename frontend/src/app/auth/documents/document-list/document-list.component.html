@@ -1,0 +1,63 @@
+<div class="page">
+  <header class="page-header">
+    <h1>Documents</h1>
+    <a routerLink="/documents/upload" class="btn-primary">Upload</a>
+  </header>
+
+  <section class="filters">
+    <input
+      type="text"
+      placeholder="Search keyword..."
+      [(ngModel)]="keyword"
+      (keyup.enter)="onSearch()"
+    />
+    <input
+      type="text"
+      placeholder="Filter by tag (e.g. HR)"
+      [(ngModel)]="tagFilter"
+      (keyup.enter)="onSearch()"
+    />
+    <button class="btn-secondary" (click)="onSearch()">Search</button>
+  </section>
+
+  <section *ngIf="loading" class="status">Loading...</section>
+
+  <section *ngIf="!loading && error" class="status error">
+    {{ error }}
+  </section>
+
+  <section *ngIf="!loading && !error && documents.length === 0" class="status">
+    No documents found.
+  </section>
+
+  <section class="table-wrapper" *ngIf="!loading && !error && documents.length">
+    <table>
+      <thead>
+        <tr>
+          <th>File Name</th>
+          <th>Tags</th>
+          <th>Version</th>
+          <th>Uploaded</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let doc of documents">
+          <td>{{ doc.fileName }}</td>
+          <td>{{ doc.tags?.join(', ') }}</td>
+          <td>{{ doc.version }}</td>
+          <td>{{ doc.createdAt | date: 'short' }}</td>
+          <td>
+            <button type="button" class="link-btn" (click)="download(doc)">
+              Download
+            </button>
+            |
+            <a [routerLink]="['/documents', doc._id]" class="link-btn">
+              Details
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>

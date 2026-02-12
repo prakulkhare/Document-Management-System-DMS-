@@ -1,4 +1,3 @@
-router.get('/:id/permissions', require('../middleware/authMiddleware'), require('../controllers/documentController').getDocumentPermissions);
 const express = require('express');
 const router = express.Router();
 
@@ -12,8 +11,17 @@ const {
   downloadDocument,
   downloadSpecificVersion,
   deleteDocument,
-  shareDocument
+  shareDocument,
+  getDocumentPermissions
 } = require('../controllers/documentController');
+
+
+
+router.get(
+  '/:id/permissions',
+  authMiddleware,
+  getDocumentPermissions
+);
 
 router.post(
   '/upload',
@@ -21,7 +29,6 @@ router.post(
   upload.single('file'),
   uploadDocument
 );
-
 
 router.get(
   '/',
@@ -35,7 +42,6 @@ router.get(
   getDocumentById
 );
 
-
 router.get(
   '/:id',
   authMiddleware,
@@ -47,7 +53,6 @@ router.get(
   authMiddleware,
   downloadSpecificVersion
 );
-
 
 router.delete(
   '/:id',
